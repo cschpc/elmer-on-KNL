@@ -8,10 +8,10 @@ ELMERSRC="/homeappl/home/zwinger/Source/"
 pushd ${ELMERSRC}/elmerfem
 VERSION=$(git log -1 --pretty=format:%h)
 popd
-ELMER_REV="Elmer_intel17_${VERSION}_${TIMESTAMP}_devel_omp_AVX"
+ELMER_REV="Elmer_intel17_${VERSION}_${TIMESTAMP}_devel_omp"
 BUILDDIR="${ELMERSRC}/builddir_2017"
 IDIR="/scratch/${ELMER_REV}"
-TOOLCHAIN="$ELMERSRC/Elmer-linux-intel-knl_avx.cmake "
+TOOLCHAIN="$ELMERSRC/Elmer-linux-intel-knl.cmake "
 echo "Building Elmer from within " ${BUILDDIR}
 #echo "using following toolchain file " ${TOOLCHAIN}
 echo "installation into " ${IDIR}
