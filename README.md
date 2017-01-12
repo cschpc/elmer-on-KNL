@@ -20,7 +20,7 @@ branch [ElmerCSC/devel](https://github.com/ElmerCSC/elmerfem/tree/devel).
 
 ## Code Adaptation
 
-Code modification towards a mutli-threaded and thread safe version of Elmer started a few years by enabling
+Code modification towards a mutli-threaded and thread safe version of Elmer already started a few years ago by enabling
 the switch from GNU-autotools to cmake as the building system for Elmer in order to enable cross-platform compilations.
 Already during the earlier stage Intel Parallel Computing Center the concept of mesh colouring has been introduced,
 but only on the basis of the assembly of a single solver. Mesh colouring is needed in order to avoid race conditions
@@ -28,3 +28,17 @@ in the multi-threaded Finite Element matrix assembly. In the further, this funct
 default operations of Elmer, hence making this a library feature that in a generalized flexible way now can be used for 
 any solver, simply by a flag added to the original default routines for matrix assembly, thereby guaranteeing backwards
 compatibility.
+
+## Performance Tests
+
+We chose a specially with OpenMP for multi-threaded and vectorized matrix assembly adapted Solver, which is to be
+ found in the Elmer test suite, [PoissonThreaded](https://github.com/ElmerCSC/elmerfem/tree/devel/fem/tests/PoissonThreaded).
+ The testcase, as the name suggests, solves the Poisson equation using the weak formulation and hence represents a standard
+ elliptic problem in FEM. Simply, the mesh size of only about 70k nodes in the test-case mentioned above was too small,
+ which led us to create tow additional meshes, cube2.grd and cube3.grd that contain 1M and 3.3M nodes, respectively.
+ Since the solver does not allow for improved multi-threaded and vectorized solution of the linear system, we confined our
+ investigation in first instance to the assembly part of the matrix. Modifying a 
+ [blueprint test-script](https://github.com/cschpc/ninja-scripts/tree/master/benchmarking/parametersweep), we tested different
+ combination of MPI tasks and OpenMP threads for these two sizes of problems and compared each resulting time
+ needed for matrix assembly with the value we got from a pure MPI parallel run on a two Haswell E5-2690v3, 12-core
+ (hence 24 cores/tasks in total) on CSC's supercomputer sisu.
