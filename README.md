@@ -43,7 +43,7 @@ We chose a specially with OpenMP for multi-threaded and vectorized matrix assemb
  [blueprint test-script](https://github.com/cschpc/ninja-scripts/tree/master/benchmarking/parametersweep), we tested different
  combination of MPI tasks and OpenMP threads for these two sizes of problems and compared each resulting time
  needed for matrix assembly with the value we got from a pure MPI parallel run on a two Haswell E5-2690v3, 12-core
- (hence 24 cores/tasks in total) on CSC's supercomputer sisu.
+ (hence 24 cores/tasks in total) on CSC's supercomputer sisu. The input files for this test are to be found under the private repository [cschpc/ninja-scripts](https://github.com/cschpc/ninja-scripts/blob/master/benchmarking/elmer/Elmer-KNL-Ninja.tar.gz).
  
 **Table 1.** Runs on one node of Sisu, using 2 Haswell (Xeon E5-2690v3, 12-core) processors using 12
 MPI processes per CPU and 1 thread per process.
