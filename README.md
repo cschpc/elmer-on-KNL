@@ -53,7 +53,7 @@ case   | size       | assembly  | total runtime
  cube2 | 1M nodes   |  0.6151 s |   2.68 s
  cube3 | 3.3M nodes |  2.0620 s |  10.34 s
  
-The test runs on KNL were run in cached mode. Fixed parameters were the setting for the `I_MPI_PIN_ORDER="compact"`. Varying parameters were the range of the MPI tasks (1,2,4,8,16,32,64) which determined the threads per task (`OMP_NUM_THREADS`) according to the different settings for the hypertrheading with the setting out of (1,2,4) and the thread affinity (`KMP_AFFINITY = {compact,balanced,scattered}`).
+The test runs on KNL were run in cached mode. Fixed parameters were the setting for the `I_MPI_PIN_ORDER="compact"`. Varying parameters were the range of the MPI tasks (1,2,4,8,16,32,64) which determined the threads per task (`OMP_NUM_THREADS`) according to the different settings for the hypertrheading with the setting out of (1,2,4) and the thread affinity (`KMP_AFFINITY = {compact,balanced,scattered}`). This makes 63 differnt compinations for each problem size.
  
 **Table 2.** Runs for test case cube2 (1 Mio. nodes) on KNL 7210 Xeon Phi processor in cached mode.
 
