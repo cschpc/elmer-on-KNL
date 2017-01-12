@@ -37,7 +37,7 @@ We chose a specially with OpenMP for multi-threaded and vectorized matrix assemb
  found in the Elmer test suite, [PoissonThreaded](https://github.com/ElmerCSC/elmerfem/tree/devel/fem/tests/PoissonThreaded).
  The testcase, as the name suggests, solves the Poisson equation using the weak formulation and hence represents a standard
  elliptic problem in FEM. Simply, the mesh size of only about 70k nodes in the test-case mentioned above was too small,
- which led us to create tow additional meshes, cube2.grd and cube3.grd that contain 1M and 3.3M nodes, respectively.
+ which led us to create two additional meshes, `cube2.grd` and `cube3.grd` that contain 1M and 3.3M nodes, respectively.
  Since the solver does not allow for improved multi-threaded and vectorized solution of the linear system, we confined our
  investigation in first instance to the assembly part of the matrix. Modifying a 
  [blueprint test-script](https://github.com/cschpc/ninja-scripts/tree/master/benchmarking/parametersweep), we tested different
