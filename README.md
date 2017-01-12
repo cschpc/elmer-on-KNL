@@ -44,3 +44,13 @@ We chose a specially with OpenMP for multi-threaded and vectorized matrix assemb
  combination of MPI tasks and OpenMP threads for these two sizes of problems and compared each resulting time
  needed for matrix assembly with the value we got from a pure MPI parallel run on a two Haswell E5-2690v3, 12-core
  (hence 24 cores/tasks in total) on CSC's supercomputer sisu.
+ 
+ **Table 1.** Runs on one node of Sisus, using 2 Haswell (Xeon E5-2690v3, 12-core) processors using 12
+MPI processes per CPU and 1 thread per process.
+
+case   | size       | assembly  | total runtime
+-------|------------|-----------|---------------
+ cube2 | 1M nodes   |  0.6151 s |   2.68 s
+ cube3 | 3.3M nodes |  2.0620 s |  10.34 s
+ 
+ 
