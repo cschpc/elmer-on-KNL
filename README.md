@@ -1,5 +1,5 @@
 # Elmer
-[Elmer](http://www.elmerfem.org) is an open source FEM code owned by [CSC](http://www.csc.fi/elmer].
+[Elmer](http://www.elmerfem.org) is an open source FEM code owned by [CSC](http://www.csc.fi/elmer).
  Elmer is used for multi-physics simulations, including solid and fluid mechanics, heat transfer,
  electrostatics and dynamics as well as acoustics broadly used in engineering. The most prominent
  scientific application of the code is within theoretical Glaciology by the add-on package 
