@@ -186,7 +186,7 @@ balanced | 16 | 16 (4) | 8.7819 | 4.25892
 balanced | 32 | 8 (4) | 8.2886 | 4.01969
 balanced | 64 | 4 (4) | 8.2159 | 3.98443
 
-Again, the best performance with respect to Xeon E5-2690v3 node is obtained with the combination (compact-mode with 32 MPI tasks and 2 threads/task, i.e. no hyperthreading). Comparing the overall runtimes between those two platforms, we obtain a value of 21.79/10.34=2.11, which again is well below the one for the assembly stage, 2.57. Cheking the other components for this case we get the following values
+Again, the best performance with respect to Xeon E5-2690v3 node is obtained with the combination (compact-mode with 32 MPI tasks and 2 threads/task, i.e. no hyperthreading). The single task runs all failed with a segmentation fault (reason unknown). Comparing the overall runtimes between those two platforms, we obtain a value of 21.79/10.34=2.11, which again is well below the one for the assembly stage, 2.57. Cheking the other components for this case we get the following values
 
 **Table 4.** Timings of sub-processes accessible to timings for case cube3 (3.3M nodes)
 
