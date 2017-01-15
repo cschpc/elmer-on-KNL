@@ -130,7 +130,7 @@ The overall runtime for the optimal case in Table 2 (compact-mode with 32 MPI ta
 
 KMP_AFFINITY | MPI   | threads/task    | assembly time (s) | performance
 -------------|-------|-----------------|-------------------|----------------------
-             | tasks | (hypertreading) | assembly time (s) | timing KNL/E5-2690v3
+             | **tasks** | **(hypertreading)** | **assembly time (s)** | **timing KNL/E5-2690v3**
 compact | 2 | 32 (1) | 6.2505 | 3.03128
 compact | 4 | 16 (1) | 6.1572 | 2.98603
 compact | 8 | 8 (1) | 6.0782 | 2.94772
