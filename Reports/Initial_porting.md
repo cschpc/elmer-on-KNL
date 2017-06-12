@@ -51,6 +51,7 @@ The test runs on KNL were run in cached mode. Fixed parameters were the setting 
 KMP_AFFINITY | MPI   | threads/task    | assembly time (s) | performance
 -------------|-------|-----------------|-------------------|----------------------
              | tasks | (hypertreading) | assembly time (s) | timing KNL/E5-2690v3
+             
 compact | 1 | 64 (1) | 2.2498 | 3.65762
 **compact** | **32** | **2 (1)** | 1.6398 | **2.66591**
 compact | 2 | 64 (2) | 2.4051 | 3.9101
