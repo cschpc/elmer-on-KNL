@@ -11,7 +11,7 @@
  
 ## Activity within IPCC
  
-The initial phase was accomplished by porting and testing different settings on KNL to achieve best practice recipes for running on that platform. 
+The [initial phase](https://github.com/cschpc/elmer-on-KNL/blob/master/Reports/Initial_porting.md) was accomplished by porting and testing different settings on KNL to achieve best practice recipes for running on that platform. 
 
 The second phase dealt with the introduction of SIMD and multi-threading OpenMP instructions to optimize the performance of Elmer on Xeon Phi as well as Xeon CPUs.
 
