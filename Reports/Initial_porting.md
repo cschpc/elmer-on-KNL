@@ -48,10 +48,10 @@ The test runs on KNL were run in cached mode. Fixed parameters were the setting 
 
 **Table 2.** Runs for test case cube2 (1 Mio. nodes) on KNL 7210 Xeon Phi processor in cached mode
 
-KMP_AFFINITY | MPI tasks | threats/task    | assembly time (s) | timing KNL/E5-2690v3 |
-------------:|:---------:|:---------------:|:------------------|:-------------------- |
- **compact** | **32**    | **2 (1)**       | **1.6398**        | **2.66591**          |
-     compact | 64        | 2 (2)           | 2.5309            | 4.11462              |
+| KMP_AFFINITY  | MPI tasks  |  threats/task  | a ssembly time (s)  | timing KNL/E5-2690v3  |
+| ------------: |:---------: | :------------: | :------------------ | :-------------------- |
+| **compact**   | **32**     | **2 (1)**      | **1.6398**          | **2.66591**           |
+| compact       | 64         | 2 (2)          | 2.5309              | 4.11462               |
  
  
 **Table 3.** Runs for test case cube2 (1 Mio. nodes) on KNL 7210 Xeon Phi processor in cached mode
