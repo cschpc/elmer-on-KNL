@@ -70,29 +70,28 @@ The test runs on KNL were run in cached mode. Fixed parameters were the setting 
 
 The overall runtime for the optimal case in Table 2 (compact-mode with 32 MPI tasks and 2 threads/task, i.e. no hyperthreading) was 6.80 seconds, leading to a relative performance with respect to a Xeon E5-2690v3 node of 6.80/2.68 = 2.54, which surprisingly is slightly better than the assembly-only performance of 2.67. We like to stress the fact that these numbers are only based on single instance runs with no statistics being collected and hence should be interpreted with respect to this background.
 
-**Table 3.** Runs for test case cube3 (3.3 Mio. nodes) on KNL 7210 Xeon Phi processor in cached mode.
+**Table 3.** Runs for test case cube3 (3.3 Mio. nodes) on KNL 7210 Xeon Phi processor in cached mode. Best performance in bold
 
-KMP_AFFINITY | MPI   | threads/task    | assembly time (s) | performance
--------------|-------|-----------------|-------------------|----------------------
-             | **tasks** | **(hypertreading)** | **assembly time (s)** | **timing KNL/E5-2690v3**
-compact | 2 | 32 (1) | 6.2505 | 3.03128
-**compact** | **32** | **2 (1)** | 5.2953 | **2.56804**
-compact | 16 | 8 (2) | 8.5355 | 4.13943
-compact | 32 | 4 (2) | 7.9908 | 3.87527
-compact | 2 | 128 (4) | 7.4633 | 3.61945
-compact | 16 | 16 (4) | 8.7333 | 4.23535
-scatter | 2 | 32 (1) | 6.3669 | 3.08773
-scatter | 16 | 4 (1) | 5.3333 | 2.58647
-scatter | 4 | 32 (2) | 8.4090 | 4.07808
-scatter | 32 | 4 (2) | 8.1317 | 3.9436
-scatter | 2 | 128 (4) | 7.4120 | 3.59457
-scatter | 16 | 16 (4) | 8.6680 | 4.20369
-balanced | 8 | 8 (1) | 6.6180 | 3.20951
-balanced | 32 | 2 (1) | 5.3160 | 2.57808
-balanced | 2 | 64 (2) | 8.0363 | 3.89733
-balanced | 4 | 32 (2) | 8.4098 | 4.07847
-balanced | 2 | 128 (4) | 7.9155 | 3.83875
-balanced | 16 | 16 (4) | 8.7819 | 4.25892
+| KMP_AFFINITY  | MPI tasks  |  threats/task  | assembly time (s)   | timing KNL/E5-2690v3  |
+| ------------: |:---------: | :------------: | :------------------ | :-------------------- |
+| compact | 2 | 32 (1) | 6.2505 | 3.03128              |
+| **compact** | **32** | **2 (1)** | 5.2953 | **2.56804**              |
+| compact | 16 | 8 (2) | 8.5355 | 4.13943              |
+| compact | 32 | 4 (2) | 7.9908 | 3.87527              |
+| compact | 2 | 128 (4) | 7.4633 | 3.61945              |
+| compact | 16 | 16 (4) | 8.7333 | 4.23535              |
+| scatter | 2 | 32 (1) | 6.3669 | 3.08773              |
+| scatter | 16 | 4 (1) | 5.3333 | 2.58647              |
+| scatter | 4 | 32 (2) | 8.4090 | 4.07808              |
+| scatter | 32 | 4 (2) | 8.1317 | 3.9436              |
+| scatter | 2 | 128 (4) | 7.4120 | 3.59457              |
+| scatter | 16 | 16 (4) | 8.6680 | 4.20369              |
+| balanced | 8 | 8 (1) | 6.6180 | 3.20951              |
+| balanced | 32 | 2 (1) | 5.3160 | 2.57808              |
+| balanced | 2 | 64 (2) | 8.0363 | 3.89733              |
+| balanced | 4 | 32 (2) | 8.4098 | 4.07847              |
+| balanced | 2 | 128 (4) | 7.9155 | 3.83875              |
+| balanced | 16 | 16 (4) | 8.7819 | 4.25892              |
 
 Same as in the case of the smaller problem, the best performance with respect to Xeon E5-2690v3 node is obtained with the combination (compact-mode with 32 MPI tasks and 2 threads/task, i.e. no hyperthreading). The single task runs all failed with a segmentation fault (reason unknown). Comparing the overall runtimes between those two platforms, we obtain a value of 21.79/10.34=2.11, which again is well below the one for the assembly stage, 2.57. Cheking the other components for this case we get the following values
 
