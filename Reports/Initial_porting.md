@@ -45,9 +45,16 @@ case   | size       | assembly  | total runtime
  cube3 | 3.3M nodes |  2.0620 s |  10.34 s
  
 The test runs on KNL were run in cached mode. Fixed parameters were the setting for the `I_MPI_PIN_ORDER="compact"`. Varying parameters were the range of the MPI tasks (1,2,4,8,16,32,64) which determined the threads per task (`OMP_NUM_THREADS`) according to the different settings for the hypertrheading with the setting out of (1,2,4) and the thread affinity (`KMP_AFFINITY = {compact,balanced,scattered}`). This makes 63 different compinations for each problem size. All results are to be found under [cschpc/elmer-on-KNL](https://github.com/cschpc/elmer-on-KNL/blob/master/Benchmarktests.txt). In the following tables we show the fastest and slowest of each configuratoin
- 
+
 **Table 2.** Runs for test case cube2 (1 Mio. nodes) on KNL 7210 Xeon Phi processor in cached mode
 
+KMP_AFFINITY | MPI tasks | threats/task    | assembly time (s) | timing KNL/E5-2690v3 |
+------------:|:---------:|:---------------:|:------------------|:-------------------- |
+ **compact** | **32**    | **2 (1)**       | **1.6398**        | **2.66591**          |
+     compact | 64        | 2 (2)           | 2.5309            | 4.11462              |
+ 
+ 
+**Table 3.** Runs for test case cube2 (1 Mio. nodes) on KNL 7210 Xeon Phi processor in cached mode
       
 KMP_AFFINITY | MPI tasks | threats/task    | assembly time (s) | timing KNL/E5-2690v3
 ------------:|:---------:|:---------------:|:------------------|:--------------------
