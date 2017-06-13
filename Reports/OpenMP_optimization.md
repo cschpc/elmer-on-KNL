@@ -21,9 +21,9 @@ Like in the [previous](https://github.com/cschpc/elmer-on-KNL/blob/master/Report
 
 **Table 1.** Comparison of timings between non-optimized and optimized version of PoissonThreaded example on Xeon E5-2690v3, 12-core
 
-| polynom. degree | Assembly (s) | Linear Solve (s)|Assembly (s) | Linear Solve (s)| performance enhancment|
-|:---------------:|:-------------|-----------------|:------------|:----------------|:----------------------|
-|                 |**non-optimized**| **non-optimized**|**optimized**| **optimized**|**relative timings**  |
+| polynom. degree | Assembly (s) | Linear Solve (s)|Assembly (s) | Linear Solve (s)| performance enhancement|performance enhancement|
+|:---------------:|:-------------|-----------------|:------------|:----------------|:-----------------------|:-----------------------|
+|                 |**non-optimized**| **non-optimized**|**optimized**| **optimized**|**Assmebly**  |** Linear Solve **|
 |	1	  |1.74E-01	 |      6.90E-02   | 1.70E-02  |5.99E-02|10.24522396|1.067806954|
 |	2	  |2.76E-01	 |	5.06E-01   | 2.89E-01  |4.41E-01|0.953407001|1.123007384|
 |	3	  |8.10E-01	 |	1.17E+00   | 1.70E-01  |1.09E+00|4.759475921|1.067094734|
