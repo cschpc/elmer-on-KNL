@@ -19,11 +19,12 @@ The implementation enabling cPardiso was done in an earlier commit(https://githu
 
 Like in the [previous](https://github.com/cschpc/elmer-on-KNL/blob/master/Reports/Initial_porting.md) phase, a simple test case solving the Poisson problem on an  unit-cube was set up, in order to evaluate the improvements achieved by the measures reported above. The problem size is given by 64k hexahedral elements.
 
-**Table 1.** Comparison of timings between non-optimized and optimized version of PoissonThreaded example
+**Table 1.** Comparison of timings between non-optimized and optimized version of PoissonThreaded example on Xeon E5-2690v3, 12-core
 
-| polynom. degree | Assembly (s) | Linear Solve (s)|
-|:---------------:|:-------------|-----------------|
-|	1	  |1.74E-01	 |  	6.90E-02   |
+| polynom. degree | Assembly (s) | Linear Solve (s)|Assembly (s) | Linear Solve (s)|
+|:---------------:|:-------------|-----------------|:-------------|-----------------|
+|                 |**non-optimized**| **non-optimized**||**non-optimized**| **non-optimized**|
+|	1	  |1.74E-01	 | 6.90E-02   |
 |	2	  |2.76E-01	 |	5.06E-01   |
 |	3	  |8.10E-01	 |	1.17E+00   |
 |	4	  |2.95E+00	 |	3.68E+00   |
@@ -31,6 +32,6 @@ Like in the [previous](https://github.com/cschpc/elmer-on-KNL/blob/master/Report
 |	6	  |2.72E+01	 |	6.60E+00   |
 
 
-
+**Table 2.** Comparison of timings between non-optimized and optimized version of PoissonThreaded example on KNL (Xeon Phi 7210)
 
 
