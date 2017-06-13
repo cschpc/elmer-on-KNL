@@ -104,6 +104,6 @@ MeshStabParams     |    0.0275 s          |    0.0511 s        | 1.86
 Assembly           |    2.0620 s          |    5.2953 s        | 2.57
 Total simulation   |   10.34 s            |   21.79 s          | 2.11
 
-As there has been no output, the slightly improved performance of the complete simulation with respect to the assembly phase must come from either the solution stage or other factors.
+As there has been no output, the slightly improved performance of the complete simulation with respect to the assembly phase must come from either the solution stage or other factors. All of the results ran are accessable in an [ASCII table](https://github.com/cschpc/elmer-on-KNL/blob/master/Reports/Benchmarktests.txt) in the repository. 
 
 
