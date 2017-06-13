@@ -7,7 +7,8 @@ Improvements on the performance of Elmer have been achieved utilizing OpenMP thr
 * Assemble local system matrix using optimized DGEMM call from BLAS
 * Thread the element loop on each MPI task
 * Utilize CPardiso/Pardiso
-Their implementation is to be found within the following commits to the Elmer main repository at GitHub:
+
+Their implementation is to be found within the following commits to the Elmer main repository at GitHub (here represented by the correpsonding pull requests):
 * https://github.com/ElmerCSC/elmerfem/pull/100 
 * https://github.com/ElmerCSC/elmerfem/pull/92
 * https://github.com/ElmerCSC/elmerfem/pull/83
@@ -17,7 +18,9 @@ The implementation enabling cPardiso was done in an earlier commit(https://githu
 
 ## Comparison of previous to new Poisson problem results
 
-Like in the [previous](https://github.com/cschpc/elmer-on-KNL/blob/master/Reports/Initial_porting.md) phase, a simple test case solving the Poisson problem on an  unit-cube was set up, in order to evaluate the improvements achieved by the measures reported above. The problem size is given by 64k hexahedral elements. The reason for the compared to the [previous](https://github.com/cschpc/elmer-on-KNL/blob/master/Reports/Initial_porting.md) phase way smaller mesh size is justified by the fact that in case of very high polynomial degree (first column) the needed memory consumption increases exponentially with mesh size. Hence the problem size has to be accomodated to match the available memory in case of the highest degree being applied. The relatively small problem size can be held repsonsible for the unusual performance for small polynomial degrees on the Xeon E5 platform (HSW). Nevertheless, past p=2 the to-be-expected enhancement in performance with increasing polynomial degree is similar than the one observed on KNL.
+Like in the [previous](https://github.com/cschpc/elmer-on-KNL/blob/master/Reports/Initial_porting.md) phase, a simple test case solving the Poisson problem on an  unit-cube was set up, in order to evaluate the improvements achieved by the measures reported above. The problem size is given by 64k hexahedral elements. The reason for the compared to the [previous](https://github.com/cschpc/elmer-on-KNL/blob/master/Reports/Initial_porting.md) phase way smaller mesh size is justified by the fact that in case of very high polynomial degree (first column) the needed memory consumption increases exponentially with mesh size. Hence the problem size has to be accomodated to match the available memory in case of the highest degree being applied. 
+
+The relatively small problem size can be held repsonsible for the unusual performance for small polynomial degrees on the Xeon E5 platform (HSW). Nevertheless, past p=2 the to-be-expected enhancement in performance with increasing polynomial degree is similar than the one observed on KNL.
 
 **Table 1.** Comparison of timings between non-optimized and optimized version of PoissonThreaded example on Xeon E5-2690v3, 12-core
 
@@ -31,6 +34,8 @@ Like in the [previous](https://github.com/cschpc/elmer-on-KNL/blob/master/Report
 |	5	  |9.53E+00	 |	1.03E+01   | 1.59E+00  |1.04E+01|5.987829908|0.995063425|
 |	6	  |2.72E+01	 |	6.60E+00   | 4.19E+00  |5.81E+00|6.502229581|1.134924488|
 
+
+KNL perfomrance was compared using a whole node of a Xeon Phi 7210 either with one MPI task/core (Table 2) or using OpenMP threads (Table 3). It comes obvious that, while the assembly phase has a similar increase in perofrmance compared to the multi-tasked MPI implementation, the solution phase did not utilize multi-threaded solvers in this case.
 
 **Table 2.** Comparison of timings between non-optimized and optimized version of PoissonThreaded example on KNL (Xeon Phi 7210) using MPI tasks on KNL
 
