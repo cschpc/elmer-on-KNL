@@ -32,10 +32,52 @@ Like in the [previous](https://github.com/cschpc/elmer-on-KNL/blob/master/Report
 |	6	  |2.72E+01	 |	6.60E+00   | 4.19E+00  |5.81E+00|6.502229581|1.134924488|
 
 
-**Table 2.** Comparison of timings between non-optimized and optimized version of PoissonThreaded example on KNL (Xeon Phi 7210)
+**Table 2.** Comparison of timings between non-optimized and optimized version of PoissonThreaded example on KNL (Xeon Phi 7210) using MPI tasks on KNL
+
+| polynom. degree | Assembly (s) | Linear Solve (s)|Assembly (s) | Linear Solve (s)| performance enhancement|performance enhancement|
+|:---------------:|:-------------|-----------------|:------------|:----------------|:-----------------------|:-----------------------|
+|                 |**non-optimized**| **non-optimized**|**optimized**| **optimized**|**Assmebly**  |**Linear Solve**|
+|	1	  |6.96E-02	 | 1.93E-01        | 3.63E-02  |1.25E-01|1.92E+00|1.60E+00|
+|	2	  |4.76E-01	 | 7.01E-01	   | 1.69E-01  |4.52E-01|2.81E+00|1.57E+00|
+|	3	  |1.40E+00	 | 1.47E+00	   | 2.94E-01  |9.74E-01|4.75E+00|1.48E+00|
+|	4	  |5.73E+00	 | 3.48E+00	   | 1.07E+00  |2.68E+00|5.36E+00|1.28E+00|
+|	5	  |2.14E+01	 | 8.64E+00	   | 2.41E+00  |7.44E+00|8.87E+00|1.16E+00|
+|	6	  |5.36E+01	 | 6.45E+00	   | 5.87E+00  |4.55E+00|9.14E+00|1.41E+00|	
+
+**Table 3.** Comparison of timings between non-optimized and optimized version of PoissonThreaded example on KNL (Xeon Phi 7210) using OMP threads on KNL
+
+| polynom. degree | Assembly (s) | Linear Solve (s)|Assembly (s) | Linear Solve (s)| performance enhancement|performance enhancement|
+|:---------------:|:-------------|-----------------|:------------|:----------------|:-----------------------|:-----------------------|
+|                 |**non-optimized**| **non-optimized**|**optimized**| **optimized**|**Assmebly**  |**Linear Solve**|
+|	1	  |6.96E-02	 | 1.93E-01        | 4.59E-02|	1.68E-01| 1.52E+00|	2.39E-02|
+|	2	  |4.76E-01	 | 7.01E-01	   | 2.13E-01|	6.43E-01| 2.23E+00|	2.01E-02|
+|	3	  |1.40E+00	 | 1.47E+00	   | 3.11E-01|	1.49E+00| 4.49E+00|	2.54E-02|
+|	4	  |5.73E+00	 | 3.48E+00	   | 1.17E+00|	2.48E+00| 4.91E+00|	4.80E-02|
+|	5	  |2.14E+01	 | 8.64E+00	   | 2.61E+00|	3.94E+00| 8.19E+00|	8.38E-02|
+|	6	  |5.36E+01	 | 6.45E+00	   | 6.13E+00|	6.05E+00| 8.76E+00|	4.25E-02|	
+
+
+
+
+
 
 	
 
+
+
+
+
+
+	
+	
+	
+	
+	
+	
+
+	
+	
+	
 
 
 
