@@ -18,7 +18,7 @@ The implementation enabling cPardiso was done in an earlier commit(https://githu
 
 ## Comparison of previous to new Poisson problem results
 
-Like in the [previous](https://github.com/cschpc/elmer-on-KNL/blob/master/Reports/Initial_porting.md) phase, a simple test case solving the Poisson problem on an  unit-cube was set up, in order to evaluate the improvements achieved by the measures reported above. The problem size is given by 64k hexahedral elements. The reason for the compared to the [previous](https://github.com/cschpc/elmer-on-KNL/blob/master/Reports/Initial_porting.md) phase way smaller mesh size is justified by the fact that in case of very high polynomial degree (first column) the needed memory consumption increases exponentially with mesh size. Hence the problem size has to be accomodated to match the available memory in case of the highest degree being applied. Comparsion was done between Elmer revision [aab88925](https://github.com/ElmerCSC/elmerfem/commit/aab88925498b66b120a80e839e497913b23ebcb9) (old) with the revison [ae60671](https://github.com/ElmerCSC/elmerfem/commit/ae60671c0f44225e251c490465ca2155ffd3150f) (version including the pull-requests from above).
+Like in the [previous](https://github.com/cschpc/elmer-on-KNL/blob/master/Reports/Initial_porting.md) phase, a simple test case solving the Poisson problem on an  unit-cube was set up, in order to evaluate the improvements achieved by the measures reported above. The problem size is given by 64k hexahedral elements. The reason for the compared to the [previous](https://github.com/cschpc/elmer-on-KNL/blob/master/Reports/Initial_porting.md) phase way smaller mesh size is justified by the fact that in case of very high polynomial degree (first column) the needed memory consumption increases exponentially with mesh size. Hence the problem size has to be accomodated to match the available memory in case of the highest degree being applied. Comparsion was done between Elmer revision [aab88925](https://github.com/ElmerCSC/elmerfem/commit/aab88925498b66b120a80e839e497913b23ebcb9) (old, non-optimized version) with the revison [ae60671](https://github.com/ElmerCSC/elmerfem/commit/ae60671c0f44225e251c490465ca2155ffd3150f) (version including the pull-requests from above).
 
 The relatively small problem size can be held repsonsible for the unusual performance for small polynomial degrees on the Xeon E5 platform (HSW). Nevertheless, past p=2 the to-be-expected enhancement in performance with increasing polynomial degree is similar than the one observed on KNL.
 
@@ -26,7 +26,7 @@ The relatively small problem size can be held repsonsible for the unusual perfor
 
 | polynom. degree | Assembly (s) | Linear Solve (s)|Assembly (s) | Linear Solve (s)| performance enhancement|performance enhancement|
 |:---------------:|:-------------|-----------------|:------------|:----------------|:-----------------------|:-----------------------|
-|                 |**non-optimized**| **non-optimized**|**optimized**| **optimized**|**Assmebly**  |**Linear Solve**|
+|                 |**non-optimized**| **non-optimized**|**optimized**| **optimized**|**Assembly**  |**Linear Solve**|
 |	1	  |1.74E-01	 |      6.90E-02   | 1.70E-02  |5.99E-02|10.24522396|1.067806954|
 |	2	  |2.76E-01	 |	5.06E-01   | 2.89E-01  |4.41E-01|0.953407001|1.123007384|
 |	3	  |8.10E-01	 |	1.17E+00   | 1.70E-01  |1.09E+00|4.759475921|1.067094734|
@@ -41,7 +41,7 @@ KNL perfomrance was compared using a whole node of a Xeon Phi 7210 either with o
 
 | polynom. degree | Assembly (s) | Linear Solve (s)|Assembly (s) | Linear Solve (s)| performance enhancement|performance enhancement|
 |:---------------:|:-------------|-----------------|:------------|:----------------|:-----------------------|:-----------------------|
-|                 |**non-optimized**| **non-optimized**|**optimized**| **optimized**|**Assmebly**  |**Linear Solve**|
+|                 |**non-optimized**| **non-optimized**|**optimized**| **optimized**|**Assembly**  |**Linear Solve**|
 |	1	  |6.96E-02	 | 1.93E-01        | 3.63E-02  |1.25E-01|1.92E+00|1.60E+00|
 |	2	  |4.76E-01	 | 7.01E-01	   | 1.69E-01  |4.52E-01|2.81E+00|1.57E+00|
 |	3	  |1.40E+00	 | 1.47E+00	   | 2.94E-01  |9.74E-01|4.75E+00|1.48E+00|
