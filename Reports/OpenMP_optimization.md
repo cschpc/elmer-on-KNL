@@ -16,7 +16,7 @@ Their implementation is to be found within the following commits to the Elmer ma
 
 The implementation enabling cPardiso was done in an earlier commit(https://github.com/ElmerCSC/elmerfem/pull/43)
 
-All of the implementations mentioned in the pull-requests above have been summarized in a contribution to the upcomming [IWOMP 2017](https://you.stonybrook.edu/iwomp2017/iwomp/) workshop on September 20-22 and will be published in the ofrm of a peer-reviewed article in the proecceedings.
+All of the implementations mentioned in the pull-requests above have been summarized in a contribution to the upcomming [IWOMP 2017](https://you.stonybrook.edu/iwomp2017/iwomp/) workshop on September 20-22 and will be published in the form of a peer-reviewed article in the proecceedings.
 
 ## Comparison of previous to new Poisson problem results
 
