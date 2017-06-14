@@ -16,6 +16,8 @@ Their implementation is to be found within the following commits to the Elmer ma
 
 The implementation enabling cPardiso was done in an earlier commit(https://github.com/ElmerCSC/elmerfem/pull/43)
 
+All of the implementations mentioned in the pull-requests above have been summarized in a contribution to the upcomming [IWOMP 2017](https://you.stonybrook.edu/iwomp2017/iwomp/) workshop on September 20-22 and will be published in the ofrm of a peer-reviewed article in the proecceedings.
+
 ## Comparison of previous to new Poisson problem results
 
 Like in the [previous](https://github.com/cschpc/elmer-on-KNL/blob/master/Reports/Initial_porting.md) phase, a simple test case solving the Poisson problem on an  unit-cube was set up, in order to evaluate the improvements achieved by the measures reported above. The problem size is given by 64k hexahedral elements. The reason for the compared to the [previous](https://github.com/cschpc/elmer-on-KNL/blob/master/Reports/Initial_porting.md) phase way smaller mesh size is justified by the fact that in case of very high polynomial degree (first column in tables below) the needed memory consumption increases exponentially with mesh size. Hence the problem size has to be accomodated to match the available memory in case of the highest degree being applied. Comparsion was done using the [PoissonPFEM](https://github.com/ElmerCSC/elmerfem/blob/devel/fem/tests/PoissonPFEM/Poisson.f90) test and a test similar to [PoissonThreaded](https://github.com/ElmerCSC/elmerfem/blob/devel/fem/tests/PoissonThreaded/Poisson.F90) that utilizes the basis function vectorizations and optimized assembly routines.
